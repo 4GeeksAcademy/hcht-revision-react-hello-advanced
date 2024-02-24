@@ -1,15 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
+import './index.css';
 import {  RouterProvider } from "react-router-dom";
 import { createContext } from 'react';
 // This is where all your routes are located
 import { router } from "./routes";
 import { useGlobalState } from "./hooks/useGlobalState";
+// Import your global State
+import defaultGlobalState from './defaultGlobalState';
 
 export const Context = createContext(null)
 
-const defaultGlobalState = {
+/* const defaultGlobalState = {
   message: null,
   demo: [
     {
@@ -23,7 +25,7 @@ const defaultGlobalState = {
       initial: "white"
     }
   ]
-}
+} */
 
 const Main = () => {
   const globalState = useGlobalState(defaultGlobalState)
